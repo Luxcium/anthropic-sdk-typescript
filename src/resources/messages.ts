@@ -49,44 +49,35 @@ export class Messages extends APIResource {
 
 export interface ContentBlock {
   text: string;
-
   type: 'text';
 }
 
 export interface ContentBlockDeltaEvent {
   delta: TextDelta;
-
   index: number;
-
   type: 'content_block_delta';
 }
 
 export interface ContentBlockStartEvent {
   content_block: ContentBlock;
-
   index: number;
-
   type: 'content_block_start';
 }
 
 export interface ContentBlockStopEvent {
   index: number;
-
   type: 'content_block_stop';
 }
 
 export interface ImageBlockParam {
   source: ImageBlockParam.Source;
-
   type?: 'image';
 }
 
 export namespace ImageBlockParam {
   export interface Source {
     data: string;
-
     media_type: 'image/jpeg' | 'image/png' | 'image/gif' | 'image/webp';
-
     type?: 'base64';
   }
 }
@@ -282,7 +273,6 @@ export interface Usage {
 }
 
 export type MessageCreateParams = MessageCreateParamsNonStreaming | MessageCreateParamsStreaming;
-
 export interface MessageCreateParamsBase {
   /**
    * The maximum number of tokens to generate before stopping.
